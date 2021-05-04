@@ -1,0 +1,23 @@
+.user-dialog::-webkit-scrollbar {
+    width: 5px;
+    height: 100%;
+    background: ghostwhite;
+}
+
+.user-dialog::-webkit-scrollbar-thumb {
+    background: purple;
+    border-right: 2px solid purple;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+    color: purple !important;
+}
+
+ ::ng-deep.mat-form-field-underline {
+    background-color: purple !important;
+}
+
+ ::ng-deep.mat-form-field-ripple {
+    background-color: purple !important;
+    ;
+}

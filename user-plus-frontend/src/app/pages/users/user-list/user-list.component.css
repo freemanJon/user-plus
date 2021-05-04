@@ -1,0 +1,12 @@
+::ng-deep .mat-focused .mat-form-field-label {
+    color: purple !important;
+}
+
+ ::ng-deep.mat-form-field-underline {
+    background-color: purple !important;
+}
+
+ ::ng-deep.mat-form-field-ripple {
+    background-color: purple !important;
+    ;
+}

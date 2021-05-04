@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="row align-items-center">
+                <div class="col-auto">
+                    <span class="h2 text-dark">Usuários</span>
+                </div>
+                <div class="col-auto">
+                    <button mat-raised-button class="btn btn-lg bg-purple text-light" (click)="openDialogUserCreate()"><span class="h2">+</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-12">
+            <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Chave de negócio</mat-label>
+                <input type="text" mask="0*" matInput [(ngModel)]="searchTerm">
+            </mat-form-field>
+        </div>
+    </div>
+    <div *ngIf="users$ | async as users; else loading" class="row">
+        <div class="col-12">
+            <div *ngIf="users.length == 0" class="row justify-content-center align-items-center mt-3">
+                <div class="col-auto">
+                    <p class="h4 text-dark">Não há usuários, adicione agora!</p>
+                </div>
+            </div>
+            <div *ngIf="users.length > 0" class="row justify-content-center align-items-center mt-3">
+                <app-user *ngFor="let user of users | userFilter: searchTerm" [user]="user"></app-user>
+            </div>
+        </div>
+    </div>
+    <ng-template #loading>
+        <div class="row justify-content-center align-items-center mt-3">
+            <p class="display-4 text-dark">Carregando...</p>
+        </div>
+    </ng-template>
+</div>

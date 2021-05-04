@@ -1,0 +1,26 @@
+<div class="col-auto">
+    <mat-card class="mat-elevation-z2 m-2 card-user">
+        <mat-card-content>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="h6 text-purple text-break">{{user.nome}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p><span class="h6 text-dark">CPF: </span>{{user.cpf | mask: '000.000.000-00'}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p><span class="h6 text-dark">Telefone: </span>{{user.telefone | mask: '(00) 00000-0000'}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p><span class="h6 text-dark">#{{user.cod_negocio}}</span></p>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

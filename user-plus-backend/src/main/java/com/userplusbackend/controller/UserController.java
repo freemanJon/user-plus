@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,37 +35,40 @@ public class UserController {
 	
 	@PostMapping("/verifyCPF")
 	public boolean VerifyCPFExisted(@RequestBody User userVerify) {
-		List<User> users = _userRepository.findAll();
-		for(User user:users) {
-			if(user.getCpf().equals(userVerify.getCpf())) {
-				return true;
-			}
+		User user = _userRepository.findByCpfIs(userVerify.getCpf());
+		if(user == null) {
+			return false;
 		}
-		
-		return false;
+		else {
+			return true;
+		}
 	}
 	
 	@PostMapping("/verifyTelefone")
 	public boolean VerifyTelefoneExisted(@RequestBody User userVerify) {
-		List<User> users = _userRepository.findAll();
-		for(User user:users) {
-			if(user.getTelefone().equals(userVerify.getTelefone())) {
-				return true;
-			}
+		User user = _userRepository.findByTelefoneIs(userVerify.getTelefone());
+		if(user == null) {
+			return false;
 		}
-		
-		return false;
+		else {
+			return true;
+		}
 	}
 	
 	@PostMapping("/verifyCodNegocio")
 	public boolean VerifyCodNegocioExisted(@RequestBody User userVerify) {
-		List<User> users = _userRepository.findAll();
-		for(User user:users) {
-			if(user.getCod_negocio().equals(userVerify.getCod_negocio())) {
-				return true;
-			}
+		User user = _userRepository.findByCodNegocioIs(userVerify.getCod_negocio());
+		if(user == null) {
+			return false;
 		}
-		
-		return false;
+		else {
+			return true;
+		}
 	}
+	
+	@GetMapping("/{Id}")
+	public User GetById(@PathVariable(value="Id") Long id) {
+		return _userRepository.findByCodNegocioIs(id);
+	}
+	
 }

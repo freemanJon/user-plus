@@ -7,4 +7,8 @@ import com.userplusbackend.model.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long>{
 
+	User findByTelefoneIs(Long telefone);
+	User findByCpfIs(Long cpf);
+	User findByCodNegocioIs(Long codNegocio);
+	
 }

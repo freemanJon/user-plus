@@ -6,16 +6,13 @@ import javax.persistence.*;
 public class User {
 	
 	@Id
-	@GeneratedValue(strategy =  GenerationType.IDENTITY)
-	private Long id;
+	private Long codNegocio;
 	@Column(nullable = false)
 	private String nome;
 	@Column(nullable = false)
 	private Long cpf;
 	@Column(nullable = false)
 	private Long telefone;
-	@Column(nullable = false)
-	private Long cod_negocio;
 	
 	public String getNome() {
 		return nome;
@@ -36,10 +33,10 @@ public class User {
 		this.telefone = telefone;
 	}
 	public Long getCod_negocio() {
-		return cod_negocio;
+		return codNegocio;
 	}
 	public void setCod_negocio(Long cod_negocio) {
-		this.cod_negocio = cod_negocio;
+		this.codNegocio = cod_negocio;
 	}
 	
 	@Override
@@ -51,11 +48,9 @@ public class User {
 		if (getClass() != obj.getClass())
 			return false;
 		User other = (User) obj;
-		if (cod_negocio != other.cod_negocio)
+		if (codNegocio != other.codNegocio)
 			return false;
 		if (cpf != other.cpf)
-			return false;
-		if (id != other.id)
 			return false;
 		if (nome == null) {
 			if (other.nome != null)

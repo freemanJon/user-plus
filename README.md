@@ -18,15 +18,20 @@ Primeiramente você deverá ter o JDK, caso não tenha pode ser feito o download
 # Endpoints API
 
 Consultar todos os usuários: (GET)http://localhost:8080/api/users
+
 Consultar usuario por codigo de negocio: (GET)http://localhost:8080/api/users/{cod_negocio}
+
 Adicionar usuário: (POST)http://localhost:8080/api/users
-- Body: {cod_negocio: Long, nome:string, cpf:Long, telefone:Long}
+  Body: {cod_negocio: Long, nome:string, cpf:Long, telefone:Long}
+  
 Verificar CPF existe: (POST)http://localhost:8080/api/users/verifyCPF
-- Body: {cod_negocio: Long, nome:string, cpf:Long, telefone:Long}
+  Body: {cod_negocio: Long, nome:string, cpf:Long, telefone:Long}
+
 Verificar codigo de negocio existe: (POST)http://localhost:8080/api/users/verifyCodNegocio
-- Body: {cod_negocio: Long, nome:string, cpf:Long, telefone:Long}
+  Body: {cod_negocio: Long, nome:string, cpf:Long, telefone:Long}
+
 Verificar telefone existe: (POST)http://localhost:8080/api/users/verifyTelefone
-- Body: {cod_negocio: Long, nome:string, cpf:Long, telefone:Long}
+  Body: {cod_negocio: Long, nome:string, cpf:Long, telefone:Long}
 
 # Arquitetura aplicação
 

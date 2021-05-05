@@ -30,4 +30,4 @@ Verificar telefone existe: (POST)http://localhost:8080/api/users/verifyTelefone
 
 # Arquitetura aplicação
 
-
+<img src="/arquitetura.png" alt="arquitetura"/>
